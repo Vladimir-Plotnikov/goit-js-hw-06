@@ -12,3 +12,20 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const refs = {
+  imgItems: document.querySelector('.gallery')
+}
+const arrayEl = []
+
+const imgItems = images.map(image => {
+  const imgEl = document.createElement('img')
+  imgEl.src = image.url
+  imgEl.alt = image.alt
+  imgEl.width = 250
+  const li = document.createElement('li')
+  li.append(imgEl)
+  arrayEl.push(li)
+})
+refs.imgItems.append(...arrayEl)
+
