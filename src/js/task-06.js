@@ -1,9 +1,15 @@
 const refs = {
-    input: document.querySelector('input'),
+    validInput: document.querySelector('#validation-input'),
     styles: document.querySelector('style'),
-    validInput: document.querySelector('#validation-input')
 }
+const validNumber = refs.validInput.attributes[2].nodeValue
 
-refs.input.addEventListener(blur, validCheck)
+refs.validInput.addEventListener('blur', validCheck)
 
-const validCheck(Event)
+function validCheck(event) {
+    if (event.currentTarget.value.length==validNumber) {
+    return refs.validInput.classList.add('valid')
+    }
+    refs.validInput.classList.remove('valid')
+    refs.validInput.classList.add('invalid')
+}
