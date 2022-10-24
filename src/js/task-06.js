@@ -6,11 +6,15 @@ const validNumber = refs.validInput.attributes[2].nodeValue
 console.log(validNumber);
 
 refs.validInput.addEventListener('blur', validCheck)
+console.log(event.currentTarget.value.length)
 
 function validCheck(event) {
-    if (event.currentTarget.value.length==validNumber) {
-    return refs.validInput.classList.add('valid')
-    }
-    refs.validInput.classList.remove('valid')
+
+    if (event.currentTarget.value.length == validNumber) {
+        refs.validInput.classList.add('valid')
+        refs.validInput.classList.remove('invalid')
+    } else {
+        refs.validInput.classList.remove('valid')
     refs.validInput.classList.add('invalid')
+    }
 } 
