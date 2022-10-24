@@ -6,7 +6,6 @@ const validNumber = refs.validInput.attributes[2].nodeValue
 console.log(validNumber);
 
 refs.validInput.addEventListener('blur', validCheck)
-console.log(event.currentTarget.value.length)
 
 function validCheck(event) {
 
