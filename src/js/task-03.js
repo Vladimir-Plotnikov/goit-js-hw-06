@@ -16,16 +16,21 @@ const images = [
 const refs = {
   imgItems: document.querySelector('.gallery')
 }
-const arrayEl = []
 
-const imgItems = images.map(image => {
-  const imgEl = document.createElement('img')
-  imgEl.src = image.url
-  imgEl.alt = image.alt
-  imgEl.width = 250
-  const li = document.createElement('li')
-  li.append(imgEl)
-  arrayEl.push(li)
-})
-refs.imgItems.append(...arrayEl)
+const markUp = images.map(({url,alt})=>`<li><img src="${url}" alt="${alt}"style="width:250px"></li>`)
+
+refs.imgItems.insertAdjacentHTML('beforeend', markUp.join(''))
+
+// const arrayEl = []
+
+// const imgItems = images.map(image => {
+//   const imgEl = document.createElement('img')
+//   imgEl.src = image.url
+//   imgEl.alt = image.alt
+//   imgEl.width = 250
+//   const li = document.createElement('li')
+//   li.append(imgEl)
+//   arrayEl.push(li)
+// })
+// refs.imgItems.append(...arrayEl)
 
